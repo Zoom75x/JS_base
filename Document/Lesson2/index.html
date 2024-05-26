@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+    <script>
+        console.log(document.body)
+    </script>
+</head>
+<body>
+<h1>Lesson2</h1>
+<div>Див1</div>
+123456
+<div>
+    123
+    <ul class="">
+        <li id="testLi"></li>
+        <li id="testLi2"></li>
+        <li></li>
+    </ul>
+
+</div>
+
+<!--коментарий-->
+
+<script>
+   function testChildren() {
+       // for (let i=0; i<document.body.childNodes.length; i++) {
+       //     console.log(document.body.childNodes[i])
+       //  }
+       for (let i=0; i<document.body.children; i++) {
+           console.log(document.body.children[i])
+       }
+       console.log(document.body.children) //доступ к коллекции детей
+       console.log("первый дочерний элемент", document.body.firstElementChild)
+       console.log("последний дочерний элемент", document.body.lastElementChild)
+
+
+       console.log("соседний элемент", document.body.children[0].nextElementSibling)
+       console.log("соседний элемент", document.body.children[0].nextElementSibling.previousElementSibling.style="color:green;")
+   }
+</script>
+<script src="scripts/script.js"></script>
+<div id="outRangeElement">
+    ...остальное приложение
+</div>
+
+<h2>Форма</h2>
+<div id="form">
+    <input placeholder="Введите имя" id="name">
+    <input type="password" placeholder="Введите пароль" id="password">
+    <input type="checkbox" id="rememberMe">remember me
+    <button onclick="getData()">Войти</button>
+</div>
+<script>
+
+    const getData = () => {
+        const name = document.getElementById("name").value
+        const password =document.getElementById("password").value
+        const rememberMe=document.getElementById("rememberMe").checked
+        if (!name || !password) {
+            alert ("Заполните все поля")
+            return
+        }
+        const div = document.createElement("h3")
+        div.style = "color:red;"
+        div.class="addClass"
+        div.innerHTML = `Привет ${name}`
+        const form = document.getElementById("form")
+        form.append(div)
+        console.log(name, password, rememberMe)
+        const userData ={name, password, rememberMe}
+        console.log(userData)
+    }
+
+
+    </script>
+
+<script>
+    //Модификация DOM
+    //Создание тега
+    const createNode=(tagName="p")=>{
+        let newDiv = document.createElement(tagName)
+        newDiv.className="newDiv"
+        newDiv.innerHTML="<b>Привет</b>"
+        return newDiv
+    }
+
+    document.body.append(createNode("div")) //добавляем в конец ноды (элемента)
+    document.body.prepend(createNode("h1")) //добавляем в начало ноды (элемента)
+    document.body.prepend(createNode())     //добавляем в начало ноды (элемента)
+    document.body.before(createNode("h3"))     //добавляем до ноды (элемента)
+    document.body.before(createNode("h2"))     //добавляем после ноды (элемента)
+//    document.body.replaceWith(createNode("h5"))     //замена ноды (элемента)
+
+
+
+
+
+
+
+        document.body.insertAdjacentElement("beforeend", createNode("h6"))
+
+
+
+</script>
+
+
+    </body>
+    </html>

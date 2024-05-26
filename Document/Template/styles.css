@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    background: #82ff2f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+
+}
+.container{
+    min-height: 300px;
+    width: 300px;
+    border: 1px solid grey;
+    border-radius: 16px;
+    background-color: #eee7e7;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+}
+.input, .btnLogin {
+    height: 36px;
+    border-radius: 4px;
+    font-size: 24px;
+}
+
+.btnLogin{
+    background-color: red;
+    color: black;
+ }
+
+.btnLoginMouseOver {
+    background-color: blue;
+}
